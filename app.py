@@ -6,9 +6,9 @@ from flask_cors import CORS,cross_origin
 
 app=Flask(__name__)
 
-@app.route("/")
-def home():
+@app.route("/",methods=["GET","POST"])
+def homepage():
     return render_template("index.html")
 
-if __name__==__main__:
-    app.run()
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
